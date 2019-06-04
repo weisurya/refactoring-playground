@@ -4,32 +4,16 @@ const plays = require('./plays.json');
 const invoices = require('./invoices.json');
 
 function statement(invoice, plays) {
-    
+
     let result = `Statement for ${invoice.customer}\n`
     
-    // Change #1 - Split Loop
-    // let totalAmount = 0;
     for(let perf of invoice.performances) {
         // Print line for this order
         result += ` ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`;
-
-        // Change #5 - Extract Fcuntion
-        // totalAmount += amountFor(perf);
     }
 
-    // Change #2 - Slide Statement
-    // let volumeCredits = 0;
-    // for(let perf of invoice.performances) {
-    //     volumeCredits += volumeCreditFor(perf);
-    // }
-
-    // Change #3 - Extract Function
-    // let volumeCredits = totalVolumeCredits(invoice);
-
-    // Change #6 - Inline Variable
     result += `Amount owed is ${usd(totalAmount(invoice))}\n`;
 
-    // Change #4 - Inline Variable
     result += `You earned ${totalVolumeCredits(invoice)} credits\n`;
 
     return result;
@@ -91,31 +75,23 @@ function usd(aNumber) {
     }).format(aNumber/100);
 }
 
-// Change #3 - Extract Function
 function totalVolumeCredits(invoice) {
-    // Change #6 - Rename Variable
     let result = 0;
 
     for(let perf of invoice.performances) {
-        // Change #6 - Rename Variable
         result += volumeCreditFor(perf);
     }
 
-    // Change #6 - Rename Variable
     return result;
 }
 
-// Change #5 - Extract Function
 function totalAmount(invoice) {
-    // Change #6 - Rename Variable
     let result = 0
 
     for(let perf of invoice.performances) {
-        // Change #6 - Rename Variable
         result += amountFor(perf);
     }
 
-    // Change #6 - Rename Variable
     return result;
 }
 

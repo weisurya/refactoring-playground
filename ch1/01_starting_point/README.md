@@ -20,8 +20,12 @@
 - using `extract function`, `change function declaration`
 
 ## 06 - Remove Total Volume Credits
-- Page 18-
+- Page 18-22
 - using `split loop`, `slide statements`, `extract function`, `inline variable`, `rename variable`
+
+## 07 - Status: Lots of Nested Functions
+- Page 22-
+- using
 
 
 ## Sidenote
