@@ -21,7 +21,7 @@
 
 ## 06 - Remove Total Volume Credits
 - Page 18-
-- using 
+- using `split loop`, `slide statements`
 
 
 ## Sidenote
@@ -55,3 +55,10 @@
 - Could do by using it together with `replace temp with query`
 - So, instead of parsing another parameter, it could be done by calling a query function with is using the other parameter to achieve same result
 - It also applicable if you want to rename the function name for clarity purpose
+
+6. How to use `split loop`:
+- separate a single large loop into a multiple small loop
+
+7. How to use `slide statements`:
+- move the relevant variable into nearby the affecting line of codes
+- gathering together everything makes it easier to do `replace temp with query`
