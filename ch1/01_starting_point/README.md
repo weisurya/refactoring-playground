@@ -16,8 +16,12 @@
 - using `extract function`, `rename variable`, `rename parameter`
 
 ## 05 - Remove the format Variable
-- Page 16-
+- Page 16-18
 - using `extract function`, `change function declaration`
+
+## 06 - Remove Total Volume Credits
+- Page 18-
+- using 
 
 
 ## Sidenote
