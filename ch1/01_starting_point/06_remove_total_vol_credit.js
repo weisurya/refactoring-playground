@@ -24,11 +24,12 @@ function statement(invoice, plays) {
     // }
 
     // Change #3 - Extract Function
-    let volumeCredits = totalVolumeCredits(invoice);
+    // let volumeCredits = totalVolumeCredits(invoice);
 
     result += `Amount owed is ${usd(totalAmount)}\n`;
 
-    result += `You earned ${volumeCredits} credits\n`;
+    // Change #4 - Inline Variable
+    result += `You earned ${totalVolumeCredits(invoice)} credits\n`;
 
     return result;
 }
