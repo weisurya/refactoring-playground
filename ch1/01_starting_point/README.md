@@ -13,7 +13,7 @@
 
 ## 04 - Extracting Volume Credits
 - Page 14-
-- using `extract function`
+- using `extract function`, `rename variable`
 
 
 ## Sidenote

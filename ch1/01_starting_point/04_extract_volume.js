@@ -72,18 +72,17 @@ function playFor(aPerformance) {
 }
 
 // Change #1 - Use extract function for calculating volume credits
-function volumeCreditFor(perf) {
-    let volumeCredits = 0;
-
-    volumeCredits += Math.max(perf.audience - 30, 0);
+// Change #2 - Rename parameter name from perf -> aPerformance, volumeCredits -> result
+function volumeCreditFor(aPerformance) {
+    let result = 0;
 
     // Add volume credits
-    volumeCredits += Math.max(perf.audience - 30, 0);
+    result += Math.max(aPerformance.audience - 30, 0);
 
     // Add extra credit for every ten comedy attendees
-    if("comedy" === playFor(perf).type) volumeCredits += Math.floor(perf.audience / 5);
+    if("comedy" === playFor(aPerformance).type) result += Math.floor(aPerformance.audience / 5);
 
-    return volumeCredits;
+    return result;
 }
 
 // Run the code
