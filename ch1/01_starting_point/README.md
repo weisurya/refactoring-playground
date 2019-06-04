@@ -8,8 +8,11 @@
 - using `extract fnction`, `rename variable`, `rename parameter`
 
 ## 03 - Removing The Play Variables
-- Page 10-
+- Page 10-14
 - using `replace temp with query`, `inline variable`, `change function declaration`
+
+## 04 - Extracting Volume Credits
+- Page 14-
 
 
 ## Sidenote
