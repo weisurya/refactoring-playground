@@ -17,7 +17,7 @@
 
 ## 05 - Remove the format Variable
 - Page 16-
-- using 
+- using `extract function`
 
 
 ## Sidenote
