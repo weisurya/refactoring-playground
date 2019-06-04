@@ -5,13 +5,15 @@ const invoices = require('./invoices.json');
 
 function statement(invoice) {
     const statementData = {};
+    // Change #2 - Move the data that comes from invoice into the intermediate data structure. So that all calculation code operates solely on data passes to it through statementData parameter
+    statementData.customer = invoice.customer;
 
     return renderPlainTest(statementData, invoice);    
 }
 
 // Change #1 - Split Phase
 function renderPlainTest(data, invoice) {
-    let result = `Statement for ${invoice.customer}\n`
+    let result = `Statement for ${data.customer}\n`
     
     for(let perf of invoice.performances) {
         // Print line for this order
