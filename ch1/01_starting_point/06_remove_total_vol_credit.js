@@ -94,24 +94,30 @@ function usd(aNumber) {
 
 // Change #3 - Extract Function
 function totalVolumeCredits(invoice) {
-    let volumeCredits = 0;
+    // Change #6 - Rename Variable
+    let result = 0;
 
     for(let perf of invoice.performances) {
-        volumeCredits += volumeCreditFor(perf);
+        // Change #6 - Rename Variable
+        result += volumeCreditFor(perf);
     }
 
-    return volumeCredits;
+    // Change #6 - Rename Variable
+    return result;
 }
 
-// Change #5 - Extract Fcuntion
+// Change #5 - Extract Function
 function totalAmount(invoice) {
-    let totalAmount = 0
+    // Change #6 - Rename Variable
+    let result = 0
 
     for(let perf of invoice.performances) {
-        totalAmount += amountFor(perf);
+        // Change #6 - Rename Variable
+        result += amountFor(perf);
     }
 
-    return totalAmount;
+    // Change #6 - Rename Variable
+    return result;
 }
 
 // Run the code
