@@ -3,17 +3,21 @@
 ## 01 - Starting Point
 - Page 2-3
 
-## 02 - Decomposing switch statement
+## 02 - Decomposing switch Statement
 - Page 6-10
 - using `extract function`, `rename variable`, `rename parameter`
 
-## 03 - Removing The Play Variables
+## 03 - Removing The play Variables
 - Page 10-14
 - using `replace temp with query`, `inline variable`, `change function declaration`
 
 ## 04 - Extracting Volume Credits
-- Page 14-
-- using `extract function`, `rename variable`
+- Page 14-16
+- using `extract function`, `rename variable`, `rename parameter`
+
+## 05 - Remove the format Variable
+- Page 16-
+- using 
 
 
 ## Sidenote
