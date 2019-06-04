@@ -42,7 +42,7 @@ function statement(invoice, plays) {
     return result;
 }
 
-function amountFor(aPerformance, play) {
+function amountFor(aPerformance) {
     let result = 0;
 
     // Change #3 - Apply change function declaration
