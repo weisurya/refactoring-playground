@@ -21,7 +21,7 @@ function statement(invoice, plays) {
     for(let perf of invoice.performances) {
 
         // Change #2 - Use inline variable
-        let thisAmount = amountFor(perf, playFor(perf));
+        // let thisAmount = amountFor(perf, playFor(perf));
 
         // Add volume credits
         volumeCredits += Math.max(perf.audience - 30, 0);
@@ -30,9 +30,10 @@ function statement(invoice, plays) {
         if("comedy" === playFor(perf).type) volumeCredits += Math.floor(perf.audience / 5);
 
         // Print line for this order
-        result += ` ${playFor(perf).name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`;
+        // Change #4 - Use another inline variable
+        result += ` ${playFor(perf).name}: ${format(amountFor(perf)/100)} (${perf.audience} seats)\n`;
 
-        totalAmount += thisAmount;
+        totalAmount += amountFor(perf);
     }
 
     result += `Amount owed is ${format(totalAmount / 100)}\n`;
