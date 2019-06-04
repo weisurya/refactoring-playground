@@ -20,7 +20,6 @@ function statement(invoice, plays) {
     
     for(let perf of invoice.performances) {
 
-        // Change #1 - Use extract function for calculating volume credits
         volumeCredits += volumeCreditFor(perf);
 
         // Print line for this order
@@ -71,8 +70,6 @@ function playFor(aPerformance) {
     return plays[aPerformance.playID];
 }
 
-// Change #1 - Use extract function for calculating volume credits
-// Change #2 - Rename parameter name from perf -> aPerformance, volumeCredits -> result
 function volumeCreditFor(aPerformance) {
     let result = 0;
 
