@@ -17,10 +17,14 @@ function statement(invoice, plays) {
         totalAmount += amountFor(perf);
     }
 
-    let volumeCredits = 0;
-    for(let perf of invoice.performances) {
-        volumeCredits += volumeCreditFor(perf);
-    }
+    // Change #2 - Slide Statement
+    // let volumeCredits = 0;
+    // for(let perf of invoice.performances) {
+    //     volumeCredits += volumeCreditFor(perf);
+    // }
+
+    // Change #3 - Extract Function
+    let volumeCredits = totalVolumeCredits(invoice);
 
     result += `Amount owed is ${usd(totalAmount)}\n`;
 
@@ -83,6 +87,17 @@ function usd(aNumber) {
         currency: "USD",
         minimumFractionDigits: 2
     }).format(aNumber/100);
+}
+
+// Change #3 - Extract Function
+function totalVolumeCredits(invoice) {
+    let volumeCredits = 0;
+
+    for(let perf of invoice.performances) {
+        volumeCredits += volumeCreditFor(perf);
+    }
+
+    return volumeCredits;
 }
 
 // Run the code
