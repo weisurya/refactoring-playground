@@ -24,8 +24,7 @@
 - using `split loop`, `slide statements`, `extract function`, `inline variable`, `rename variable`
 
 ## 07 - Status: Lots of Nested Functions
-- Page 22-
-- using
+- Page 22-23
 
 
 ## Sidenote
