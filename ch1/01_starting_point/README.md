@@ -17,7 +17,7 @@
 
 ## 05 - Remove the format Variable
 - Page 16-
-- using `extract function`
+- using `extract function`, `change function declaration`
 
 
 ## Sidenote
@@ -50,3 +50,4 @@
 - The idea is to reduce/change the total number of parameters of a particular function
 - Could do by using it together with `replace temp with query`
 - So, instead of parsing another parameter, it could be done by calling a query function with is using the other parameter to achieve same result
+- It also applicable if you want to rename the function name for clarity purpose
