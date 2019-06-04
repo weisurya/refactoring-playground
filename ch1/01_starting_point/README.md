@@ -21,7 +21,7 @@
 
 ## 06 - Remove Total Volume Credits
 - Page 18-
-- using `split loop`, `slide statements`, `extract function`, `inline variable`
+- using `split loop`, `slide statements`, `extract function`, `inline variable`, `rename variable`
 
 
 ## Sidenote
