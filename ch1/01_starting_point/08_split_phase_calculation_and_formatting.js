@@ -3,12 +3,14 @@
 const plays = require('./plays.json');
 const invoices = require('./invoices.json');
 
-function statement(invoice, plays) {
-    return renderPlainTest(invoice, plays);    
+function statement(invoice) {
+    const statementData = {};
+
+    return renderPlainTest(statementData, invoice);    
 }
 
 // Change #1 - Split Phase
-function renderPlainTest(invoice, plays) {
+function renderPlainTest(data, invoice) {
     let result = `Statement for ${invoice.customer}\n`
     
     for(let perf of invoice.performances) {
@@ -100,5 +102,5 @@ function totalAmount(invoice) {
 }
 
 // Run the code
-const result = statement(invoices[0], plays);
+const result = statement(invoices[0]);
 console.log(result);
