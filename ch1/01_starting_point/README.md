@@ -26,6 +26,10 @@
 ## 07 - Status: Lots of Nested Functions
 - Page 22-23
 
+## 08 - Splitting the Phases of Calculation and Formatting
+- Page 24-
+- use `split phase`
+
 
 ## Sidenote
 1. A good practice to always call the return value from a function as `result`. That way, you always know its role.
@@ -65,3 +69,7 @@
 7. How to use `slide statements`:
 - move the relevant variable into nearby the affecting line of codes
 - gathering together everything makes it easier to do `replace temp with query`
+
+8. How to use `split phase`:
+- to divide the logic into 2 parts: 1) to calculate the data required for the statement, 2) renders it into text on HTML
+- cooperate with `extract function`
