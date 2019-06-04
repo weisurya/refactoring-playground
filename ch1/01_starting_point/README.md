@@ -5,7 +5,7 @@
 
 ## 02 - Decomposing switch statement
 - Page 6-10
-- using `extract fnction`, `rename variable`, `rename parameter`
+- using `extract function`, `rename variable`, `rename parameter`
 
 ## 03 - Removing The Play Variables
 - Page 10-14
@@ -13,6 +13,7 @@
 
 ## 04 - Extracting Volume Credits
 - Page 14-
+- using `extract function`
 
 
 ## Sidenote
