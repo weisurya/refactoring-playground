@@ -16,7 +16,7 @@ function enrichPerformance(aPerformance) {
     // Perform a shallow copy
     const result = Object.assign({}, aPerformance);
     // Change #3 - Apply Move Function 
-    result.play = playFor(aPerformance);
+    result.play = playFor(result);
 
     return result;
 }
@@ -40,7 +40,7 @@ function renderPlainTest(data) {
 function amountFor(aPerformance) {
     let result = 0;
 
-    switch(playFor(aPerformance).type) {
+    switch(aPerformance.play.type) {
         case "tragedy":
             result = 40000;
             
@@ -62,7 +62,7 @@ function amountFor(aPerformance) {
             break;
 
         default:
-            throw new Error(`Unknown type: ${playFor(aPerformance).type}`);
+            throw new Error(`Unknown type: ${aPerformance.play.type}`);
     }
 
     return result;
