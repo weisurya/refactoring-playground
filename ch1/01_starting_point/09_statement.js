@@ -26,34 +26,7 @@ class PerformanceCalculator {
 
     // Change #3 - Refactor by using Moving Function
     amount() {
-        let result = 0;
-
-        switch(this.play.type) {
-            case "tragedy":
-                result = 40000;
-                
-                if(this.audience > 30) {
-                    result += 1000 * (this.audience - 30);
-                }
-
-                break;
-            
-            case "comedy":
-                result = 30000;
-
-                if(this.audience > 20) {
-                    result += 10000 + 500 * (this.audience - 20);
-                }
-
-                result += 300 * this.audience;
-
-                break;
-
-            default:
-                throw new Error(`Unknown type: ${this.play.type}`);
-        }
-
-        return result;
+        throw new Error('Subclass responsibility!');
     }
 
     // Change #5 - Refactor by using Moving Function
@@ -68,10 +41,50 @@ class PerformanceCalculator {
     }
 }
 
+// Change #6 - Refactor by using replace conditional with polymorphism
+class TragedyCalculator extends PerformanceCalculator {
+    amount() {
+        let result = 40000;
+
+        if(this.audience > 30) {
+            result += 1000 * (this.audience - 30);
+        }
+
+        return result;
+    }
+}
+
+// Change #7 - Refactor by using replace conditional with polymorphism
+class ComedyCalculator extends PerformanceCalculator {
+    amount() {
+        result = 30000;
+
+        if(this.performance.audience > 20) {
+            result += 10000 + 500 * (this.performance.audience - 20);
+        }
+
+        result += 300 * this.performance.audience;
+
+        return result;
+    }
+}
+
+// Change #6 - Replace constructor with factory function
+function createPerformanceCalculator(aPerformance, aPlay) {
+    // Change #8 - Refactor by using replace conditional with polymorphism
+    switch(aPlay.type) {
+        case "tragedy": return new TragedyCalculator(aPerformance, aPlay);
+        case "comedy": return new ComedyCalculator(aPerformance, aPlay);
+        default:
+            throw new Error(`Unknown type: ${aPlay.type}`);
+    }
+}
+
 function enrichPerformance(aPerformance) {
     // Change #1 - create calculator class
     // Change #2 - change function declaration
-    const calculator = new PerformanceCalculator(aPerformance, playFor(aPerformance));
+    // Change #6 - Replace constructor with factory function
+    const calculator = createPerformanceCalculator(aPerformance, playFor(aPerformance));
 
     const result = Object.assign({}, aPerformance);
 

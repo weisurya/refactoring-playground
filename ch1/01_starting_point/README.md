@@ -32,7 +32,7 @@
 
 ## 09 - Reorganizing the Calculations by Type
 - Page 35-
-- using `change function declaration`, `moving function`, `inline function`
+- using `change function declaration`, `moving function`, `inline function`, `replace type code with subclasses`, `eplace constructor with factory function`, `replace conditional with polymorphism`
 
 ## Sidenote
 1. A good practice to always call the return value from a function as `result`. That way, you always know its role.
@@ -98,3 +98,15 @@
 - copt the logic over to its new context
 - adjust the code to fit into its new home
 - change several declaration that affected with this changes
+
+12. **How to use `replace type code with subclasses`:**
+- the idea is to introduce a subclasses instead of the type code
+- since Javascript can't result subclasses, we use `replace constructor with factory function`
+- extend a class from the parent class
+
+13. **How to use `replace constructor with factory function`:**
+- the idea is to introduce a function instead of the type code
+
+14. **How to use `replace conditional with polymorphism`:**
+- the idea is to use polymorphism instead of conditional statement
+- instead of using switch to create logic-- use subclass
