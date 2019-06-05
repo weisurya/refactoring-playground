@@ -32,7 +32,7 @@
 
 ## 09 - Reorganizing the Calculations by Type
 - Page 35-
-- using `change function declaration`
+- using `change function declaration`, `moving function`
 
 ## Sidenote
 1. A good practice to always call the return value from a function as `result`. That way, you always know its role.
@@ -90,5 +90,11 @@
 - move that function into a separate file
 - good practice to also move the dependence functions into that separate file (should be really careful! Use your IDE to identify whether that dependence function still being used by another function on that file or not)
 
-10 **How to use `change function declaration`:**
+
+10. **How to use `change function declaration`:**
 - the goal is to move a particular function into another site (i.e. into a class)
+
+11. **How to use `moving function`:**
+- copt the logic over to its new context
+- adjust the code to fit into its new home
+- change several declaration that affected with this changes
