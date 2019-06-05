@@ -25,25 +25,20 @@ class PerformanceCalculator {
     }
 
     // Change #3 - Refactor by using Moving Function
-    amount() {
+    get amount() {
         throw new Error('Subclass responsibility!');
     }
 
     // Change #5 - Refactor by using Moving Function
-    volumeCredits() {
-        let result = 0;
-
-        result += Math.max(this.performance.audience - 30, 0);
-
-        if("comedy" === this.play.type) result += Math.floor(this.performance.audience / 5);
-
-        return result;
+    get volumeCredits() {
+        // Change #9 - Refactor by using replace conditional with polymorphism
+        return Math.max(this.performance.audience - 30, 0);
     }
 }
 
 // Change #6 - Refactor by using replace conditional with polymorphism
 class TragedyCalculator extends PerformanceCalculator {
-    amount() {
+    get amount() {
         let result = 40000;
 
         if(this.audience > 30) {
@@ -56,8 +51,8 @@ class TragedyCalculator extends PerformanceCalculator {
 
 // Change #7 - Refactor by using replace conditional with polymorphism
 class ComedyCalculator extends PerformanceCalculator {
-    amount() {
-        result = 30000;
+    get amount() {
+        let result = 30000;
 
         if(this.performance.audience > 20) {
             result += 10000 + 500 * (this.performance.audience - 20);
@@ -66,6 +61,11 @@ class ComedyCalculator extends PerformanceCalculator {
         result += 300 * this.performance.audience;
 
         return result;
+    }
+    
+    // Change #9 - Refactor by using replace conditional with polymorphism
+    get volumeCredits() {
+        return super.volumeCredits + Math.floor(this.performance.audience / 5);
     }
 }
 
@@ -92,9 +92,9 @@ function enrichPerformance(aPerformance) {
     result.play = calculator.play;
 
     // Change @4 - Inline Function
-    result.amount = calculator.amount();
+    result.amount = calculator.amount;
 
-    result.volumeCredits = calculator.volumeCredits();
+    result.volumeCredits = calculator.volumeCredits;
 
     return result;
 }
