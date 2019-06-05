@@ -7,9 +7,18 @@ function statement(invoice) {
     const statementData = {};
     // Change #2 - Move the data that comes from invoice into the intermediate data structure. So that all calculation code operates solely on data passes to it through statementData parameter
     statementData.customer = invoice.customer;
-    statementData.performances = invoice.performances;
+    statementData.performances = invoice.performances.map(enrichPerformance);
 
     return renderPlainTest(statementData);    
+}
+
+function enrichPerformance(aPerformance) {
+    // Perform a shallow copy
+    const result = Object.assign({}, aPerformance);
+    // Change #3 - Apply Move Function 
+    result.play = playFor(aPerformance);
+
+    return result;
 }
 
 // Change #1 - Split Phase
