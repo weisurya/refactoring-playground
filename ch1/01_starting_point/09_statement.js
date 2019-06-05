@@ -55,6 +55,17 @@ class PerformanceCalculator {
 
         return result;
     }
+
+    // Change #5 - Refactor by using Moving Function
+    volumeCredits() {
+        let result = 0;
+
+        result += Math.max(this.performance.audience - 30, 0);
+
+        if("comedy" === this.play.type) result += Math.floor(this.performance.audience / 5);
+
+        return result;
+    }
 }
 
 function enrichPerformance(aPerformance) {
@@ -67,24 +78,10 @@ function enrichPerformance(aPerformance) {
     // Change #2 - change function declaration
     result.play = calculator.play;
 
-    result.amount = amountFor(result);
+    // Change @4 - Inline Function
+    result.amount = calculator.amount();
 
-    result.volumeCredits = volumeCreditFor(result);
-
-    return result;
-}
-
-function amountFor(aPerformance) {
-    // Change #3 - Refactor by using Moving Function
-    return new PerformanceCalculator(aPerformance, playFor(aPerformance)).amount();
-}
-
-function volumeCreditFor(aPerformance) {
-    let result = 0;
-
-    result += Math.max(aPerformance.audience - 30, 0);
-
-    if("comedy" === playFor(aPerformance).type) result += Math.floor(aPerformance.audience / 5);
+    result.volumeCredits = calculator.volumeCredits();
 
     return result;
 }

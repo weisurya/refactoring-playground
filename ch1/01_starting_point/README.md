@@ -32,7 +32,7 @@
 
 ## 09 - Reorganizing the Calculations by Type
 - Page 35-
-- using `change function declaration`, `moving function`
+- using `change function declaration`, `moving function`, `inline function`
 
 ## Sidenote
 1. A good practice to always call the return value from a function as `result`. That way, you always know its role.
