@@ -27,7 +27,7 @@ function renderPlainTest(data) {
     
     for(let perf of data.performances) {
         // Print line for this order
-        result += ` ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`;
+        result += ` ${perf.play.name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`;
     }
 
     result += `Amount owed is ${usd(totalAmount(data))}\n`;
@@ -40,7 +40,7 @@ function renderPlainTest(data) {
 function amountFor(aPerformance) {
     let result = 0;
 
-    switch(playFor(aPerformance).type) {
+    switch(aPerformance.play.type) {
         case "tragedy":
             result = 40000;
             
@@ -62,7 +62,7 @@ function amountFor(aPerformance) {
             break;
 
         default:
-            throw new Error(`Unknown type: ${playFor(aPerformance).type}`);
+            throw new Error(`Unknown type: ${aPerformance.play.type}`);
     }
 
     return result;
