@@ -40,7 +40,7 @@ function renderPlainTest(data) {
 function amountFor(aPerformance) {
     let result = 0;
 
-    switch(aPerformance.play.type) {
+    switch(playFor(aPerformance).type) {
         case "tragedy":
             result = 40000;
             
@@ -62,7 +62,7 @@ function amountFor(aPerformance) {
             break;
 
         default:
-            throw new Error(`Unknown type: ${aPerformance.play.type}`);
+            throw new Error(`Unknown type: ${playFor(aPerformance).type}`);
     }
 
     return result;
