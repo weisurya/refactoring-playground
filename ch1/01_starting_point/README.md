@@ -28,7 +28,7 @@
 
 ## 08 - Splitting the Phases of Calculation and Formatting
 - Page 24-
-- use `split phase`, `extract function`, `change function declaration`, `move function`
+- use `split phase`, `extract function`, `change function declaration`, `move function`, `replace loop with pipeline`
 
 
 ## Sidenote
@@ -73,3 +73,8 @@
 8. How to use `split phase`:
 - to divide the logic into 2 parts: 1) to calculate the data required for the statement, 2) renders it into text on HTML
 - cooperate with `extract function`
+
+9. How to use `replace loop with pipeline`:
+- move several line of codes into a function
+- move that function into a separate file
+- good practice to also move the dependence functions into that separate file (should be really careful! Use your IDE to identify whether that dependence function still being used by another function on that file or not)
