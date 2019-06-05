@@ -8,7 +8,9 @@ function statement(invoice) {
     // Change #2 - Move the data that comes from invoice into the intermediate data structure. So that all calculation code operates solely on data passes to it through statementData parameter
     statementData.customer = invoice.customer;
     statementData.performances = invoice.performances.map(enrichPerformance);
+    // Change #6 - Apply Move Function
     statementData.totalAmount = totalAmount(statementData);
+    // Change #6 - Apply Move Function
     statementData.totalVolumeCredits = totalVolumeCredits(statementData);
 
     return renderPlainTest(statementData);    
