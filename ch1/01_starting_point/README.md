@@ -27,9 +27,12 @@
 - Page 22-23
 
 ## 08 - Splitting the Phases of Calculation and Formatting
-- Page 24-
-- use `split phase`, `extract function`, `change function declaration`, `move function`, `replace loop with pipeline`
+- Page 24-33
+- using `split phase`, `extract function`, `change function declaration`, `move function`, `replace loop with pipeline`
 
+## 09 - Reorganizing the Calculations by Type
+- Page 35-
+- using
 
 ## Sidenote
 1. A good practice to always call the return value from a function as `result`. That way, you always know its role.
