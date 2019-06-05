@@ -15,8 +15,10 @@ function statement(invoice) {
 function enrichPerformance(aPerformance) {
     // Perform a shallow copy
     const result = Object.assign({}, aPerformance);
-    // Change #3 - Apply Move Function 
+    // Change #3 - Apply Move Function
     result.play = playFor(result);
+    // Change #4 - Apply Move Function
+    result.amount = amountFor(result);
 
     return result;
 }
@@ -27,7 +29,7 @@ function renderPlainTest(data) {
     
     for(let perf of data.performances) {
         // Print line for this order
-        result += ` ${perf.play.name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`;
+        result += ` ${perf.play.name}: ${usd(perf.amount)} (${perf.audience} seats)\n`;
     }
 
     result += `Amount owed is ${usd(totalAmount(data))}\n`;
@@ -107,7 +109,7 @@ function totalAmount(data) {
     let result = 0
 
     for(let perf of data.performances) {
-        result += amountFor(perf);
+        result += perf.amount;
     }
 
     return result;
