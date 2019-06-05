@@ -19,6 +19,8 @@ function enrichPerformance(aPerformance) {
     result.play = playFor(result);
     // Change #4 - Apply Move Function
     result.amount = amountFor(result);
+    // Change #5 - Apply Move Function
+    result.volumeCredits = volumeCreditFor(result);
 
     return result;
 }
@@ -99,7 +101,7 @@ function totalVolumeCredits(data) {
     let result = 0;
 
     for(let perf of data.performances) {
-        result += volumeCreditFor(perf);
+        result += perf.volumeCredits;
     }
 
     return result;

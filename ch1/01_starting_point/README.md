@@ -28,7 +28,7 @@
 
 ## 08 - Splitting the Phases of Calculation and Formatting
 - Page 24-
-- use `split phase`, `extract function`, `change function declaration`
+- use `split phase`, `extract function`, `change function declaration`, `move function`
 
 
 ## Sidenote
