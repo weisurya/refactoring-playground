@@ -31,7 +31,7 @@
 - using `split phase`, `extract function`, `change function declaration`, `move function`, `replace loop with pipeline`
 
 ## 09 - Reorganizing the Calculations by Type
-- Page 35-
+- Page 35-43
 - using `change function declaration`, `moving function`, `inline function`, `replace type code with subclasses`, `eplace constructor with factory function`, `replace conditional with polymorphism`
 
 ## Sidenote
