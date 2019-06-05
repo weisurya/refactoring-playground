@@ -8,6 +8,8 @@ function statement(invoice) {
     // Change #2 - Move the data that comes from invoice into the intermediate data structure. So that all calculation code operates solely on data passes to it through statementData parameter
     statementData.customer = invoice.customer;
     statementData.performances = invoice.performances.map(enrichPerformance);
+    statementData.totalAmount = totalAmount(statementData);
+    statementData.totalVolumeCredits = totalVolumeCredits(statementData);
 
     return renderPlainTest(statementData);    
 }
@@ -34,9 +36,9 @@ function renderPlainTest(data) {
         result += ` ${perf.play.name}: ${usd(perf.amount)} (${perf.audience} seats)\n`;
     }
 
-    result += `Amount owed is ${usd(totalAmount(data))}\n`;
+    result += `Amount owed is ${usd(data.totalAmount)}\n`;
 
-    result += `You earned ${totalVolumeCredits(data)} credits\n`;
+    result += `You earned ${data.totalVolumeCredits} credits\n`;
 
     return result;
 }
