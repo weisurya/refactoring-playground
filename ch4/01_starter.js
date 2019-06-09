@@ -1,6 +1,8 @@
 'use strict';
 
-const assert = require('assert');
+const assert = require('chai').assert;
+const expect = require('chai').expect;
+
 
 class Province {
     constructor(doc) {
@@ -33,6 +35,23 @@ class Province {
     set price(arg) { return this._price = parseInt(arg); }
 
     get shortfall() { return this._demand - this.totalProduction; }
+
+    get profit() { return this.demandValue - this.demandCost; }
+    get demandCost() {
+        let remainingDemand = this.demand;
+        let result = 0;
+        this.producers
+            .sort((a, b) => a.cost - b.cost)
+            .forEach(producer => {
+                const contribution = Math.min(remainingDemand, producer.production);
+                remainingDemand -= contribution;
+                result += contribution * producer.cost;
+            })
+
+        return result;
+    }
+    get demandValue() { return this.satisfiedDemand * this.price; }
+    get satisfiedDemand() { return Math.min(this._demand, this.totalProduction); }
 }
 
 function sampleProvinceData() {
@@ -68,23 +87,6 @@ class Producer {
         this._province.totalProduction += newProduction - this._production;
         this._production = newProduction;
     }
-
-    get profit() { return this.demandValue - this.demandCost; }
-    get demandCost() {
-        let remainingDemand = this.demand;
-        let result = 0;
-        this.producers
-            .sort((a, b) => a.cost - b.cost)
-            .forEach(producer => {
-                const contribution = Math.min(remainingDemand, producer.production);
-                remainingDemand -= contribution;
-                result += contribution * producer.cost;
-            })
-
-        return result;
-    }
-    get demandValue() { return this.satisfiedDemand * this.price; }
-    get satisfiedDemand() { return Math.min(this._demand, this.totalProduction); }
 }
 
 /** TEST CASES */
@@ -92,8 +94,12 @@ describe('province', () => {
     it('shortfall', () => {
         const asia = new Province(sampleProvinceData());
 
-        console.log(asia);
+        expect(asia.shortfall).equal(5);
+    })
 
-        assert.equal(asia.shortfall, 5);
+    it('profit', () => {
+        const asia = new Province(sampleProvinceData());
+
+        expect(asia.profit).equal(230);
     })
 })
