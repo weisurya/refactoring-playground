@@ -4,6 +4,7 @@
 ___
 ## Table of Content
 1. [Chapter 1](https://github.com/weisurya/refactoring-playground/tree/master/ch1)
+1. [Chapter 4](https://github.com/weisurya/refactoring-playground/tree/master/ch4)
 
 ## Related Blog
 - [[Refactoring 101] Hello Refactoring!](https://medium.com/@wei.surya/refactoring-101-hello-refactoring-833bcc258fa1)
