@@ -120,6 +120,12 @@ describe('province', () => {
         expect(asia.shortfall).equal(-26);
         expect(asia.profit).equal(-10);
     })
+    it('empty string demand', () => {
+        asia.demand = '';
+
+        expect(asia.shortfall).NaN;
+        expect(asia.profit).NaN;
+    })
 })
 
 describe('no producers', () => {
@@ -144,3 +150,19 @@ describe('no producers', () => {
         expect(noProducers.profit).equal(0);
     })
 })
+
+// True Negative test case
+// describe('string for producers', () => {
+//     it('', () => {
+//         const data = {
+//             name: 'String producers',
+//             producers: '',
+//             demand: 30,
+//             price: 20,
+//         };
+
+//         const prov = new Province(data);
+
+//         expect(prov.shortfall).equal(0);
+//     });
+// })
