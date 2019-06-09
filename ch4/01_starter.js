@@ -1,3 +1,7 @@
+'use strict';
+
+const assert = require('assert');
+
 class Province {
     constructor(doc) {
         this._name = doc.name;
@@ -7,7 +11,7 @@ class Province {
         this._price = doc.price;
         
         doc.producers.forEach(producer => this.addProducer(
-            new producer(this, producer)
+            new Producer(this, producer)
         ));
     }
 
@@ -17,8 +21,10 @@ class Province {
     }
 
     get name() { return this._name; }
-    get producers() { return this._producers; }
+    get producers() { return this._producers.slice(); }
+
     get totalProduction() { return this._totalProduction; }
+    set totalProduction(arg) { return this._totalProduction = arg; }
 
     get demand() { return this._demand; }
     set demand(arg) { return this._demand = parseInt(arg); }
@@ -37,7 +43,7 @@ function sampleProvinceData() {
             { name: "Attalia", cost: 12, production: 10 },
             { name: "Sinope", cost: 10, production: 6 },
         ],
-        demands: 30,
+        demand: 30,
         price: 20
     };
 }
@@ -80,3 +86,14 @@ class Producer {
     get demandValue() { return this.satisfiedDemand * this.price; }
     get satisfiedDemand() { return Math.min(this._demand, this.totalProduction); }
 }
+
+/** TEST CASES */
+describe('province', () => {
+    it('shortfall', () => {
+        const asia = new Province(sampleProvinceData());
+
+        console.log(asia);
+
+        assert.equal(asia.shortfall, 5);
+    })
+})
