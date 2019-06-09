@@ -1,0 +1,30 @@
+{
+  "name": "refactoring-playground",
+  "version": "1.0.0",
+  "description": "Refactoring Playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weisurya/refactoring-playground.git"
+  },
+  "keywords": [
+    "refactoring",
+    "software",
+    "development",
+    "testing",
+    "software",
+    "architecture"
+  ],
+  "author": "Soen Surya Soenaryo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weisurya/refactoring-playground/issues"
+  },
+  "homepage": "https://github.com/weisurya/refactoring-playground#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
+}
